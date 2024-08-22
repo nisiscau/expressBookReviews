@@ -1,1 +1,1 @@
-# coding-project-template
+# This is Pierre Pochet's final project of IBM backend development training with NodeJS
