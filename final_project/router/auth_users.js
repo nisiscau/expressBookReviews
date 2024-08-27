@@ -89,15 +89,15 @@ regd_users.put("/auth/review/:isbn", (req, res) => {
   let ISBN = req.params.isbn;
   let details = req.query.review;
   let rev = {user:userd,review:details}
-  books[ISBN].review = rev;
+  books[ISBN].reviews = rev;
   return res.status(201).json({message:"Review added successfully"})
   
 });
 
 regd_users.delete("/auth/review/:isbn", (req, res) => {
     let ISBN = req.params.isbn;
-    books[ISBN].review = {}
-    return res.status(200).json({message:"Review has been deleted"})
+    books[ISBN].reviews = {}
+    return res.status(200).json({messsage:"Review has been deleted"})
 });
 
 module.exports.authenticated = regd_users;
