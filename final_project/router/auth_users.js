@@ -88,6 +88,9 @@ regd_users.put("/auth/review/:isbn", (req, res) => {
   let userd = req.session.username;
   let ISBN = req.params.isbn;
   let details = req.query.review;
+  console.log("username: " + username);
+  console.log("isbn: " + isbn);
+  console.log("review: " + details);
   let rev = {user:userd,review:details}
   books[ISBN].reviews = rev;
   return res.status(201).json({message:"Review added successfully"})
