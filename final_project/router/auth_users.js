@@ -77,6 +77,7 @@ regd_users.post("/login", (req,res) => {
     req.session.authorization = {
         accessToken
     }
+    console.log(accessToken);
     res.send("User logged in Successfully")
  
 });
