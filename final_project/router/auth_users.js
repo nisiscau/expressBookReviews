@@ -89,6 +89,9 @@ regd_users.put("/auth/review/:isbn", (req, res) => {
   let ISBN = req.params.isbn;
   let details = req.body.review;
   let rev = {user:userd,review:details}
+  if (!books[ISBN].reviews) {
+    books[ISBN].reviews = [];  // Initialize the reviews array if it doesn't exist
+  }
   books[ISBN].reviews = rev;
   return res.status(201).json({message:"Review added successfully"})
   
